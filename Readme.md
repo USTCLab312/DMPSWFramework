@@ -1,24 +1,32 @@
 
-#   Kernel of DAMPE offline software
+#   Framework of DAMPE offline software
 
-##  What are in here:
+##  Requirements:
 
-    1.  parameters and enum type for whole detector
+    1.  root
 
-    2.  bind interface to python (in DmpBindingCore.cc)
+    2.  scons
 
-    3.  scripts to set environment (./script)
+    3.  boost
 
+    4.  python-devel
+
+##  Installation:
+
+    At where there is the file "SConstruct", execute:
+        scons
 
 ##  Usage:
 
-    1.  install DMPSW firstly (refer to: ../README.md/{How to install DMPSW})
+    1.  extension mode of algorithm, service and event class
 
-    2.  other packages which want to use the created library libDmpCore.so, in their job option scripts.
+    2.  boot mode of all jobs of DMPSW
 
-    3.  you can use it in python:
-        $   python
-        >   import libDmpCore
-        >   library.<Tab>
+    3.  data exchange mechanism of DMPSW
 
+    4.  basic service
+        4.1     root IO service
+        4.2     data base service(on going)
+
+    5.  uniform style of log information
 

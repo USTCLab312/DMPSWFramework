@@ -43,6 +43,7 @@ for tmp in os.listdir('./script'):
 #--------------------------------------------------------------------
 goal=env.SharedLibrary(target,Glob('./src/*.cc'))
 Default(env.InstallAs(prefix+'/lib/lib'+target+".so",goal))
+
 if env['PLATFORM'] == 'darwin':         # MacOs
     Default(env.InstallAs(prefix+'/lib/lib'+target+".dylib",goal))
 
