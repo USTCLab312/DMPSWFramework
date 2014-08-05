@@ -1,13 +1,11 @@
 /*
- *  $Id: DmpBindingKernel.cc, 2014-05-04 15:31:47 DAMPE $
+ *  $Id: DmpBindingKernel.cc, 2014-08-05 19:43:08 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 07/03/2014
 */
 
 #include <boost/python.hpp>
 
-#include "DmpRunMode.h"
-#include "DmpDetectorID.h"
 #include "DmpVSvc.h"
 #include "DmpVAlg.h"
 #include "DmpAlgorithmManager.h"
@@ -64,22 +62,6 @@ struct DmpVSvcWrapper : public DmpVSvc, boost::python::wrapper<DmpVSvc>{
 //-------------------------------------------------------------------
 BOOST_PYTHON_MODULE(libDmpKernel){
   using namespace boost::python;
-  // DmpRunMode
-  enum_<DmpRunMode::Type>("DmpRunMode")
-    .value("kUnknow",   DmpRunMode::kUnknow)
-    .value("k0Compress",DmpRunMode::k0Compress)
-    .value("kCompress", DmpRunMode::kCompress)
-    .value("kCalPed",   DmpRunMode::kCalPed)
-    .value("kCalDAC",   DmpRunMode::kCalDAC)
-  ;
-  // DmpDetectorID
-  enum_<DmpDetectorID::Type>("DmpDetectorID")
-    .value("kPsd",  DmpDetectorID::kPsd)
-    .value("kStk",  DmpDetectorID::kStk)
-    .value("kBgo",  DmpDetectorID::kBgo)
-    .value("kNud",  DmpDetectorID::kNud)
-    .value("kWhole",DmpDetectorID::kWhole)
-  ;
   // DmpVSvc
   class_<DmpVSvcWrapper,boost::noncopyable>("DmpVSvc",init<std::string>())
     .def("Initialize",  pure_virtual(&DmpVSvc::Initialize))
