@@ -10,12 +10,13 @@ import os
 target='DmpKernel'
 
 #-------------------------------------------------------------------
-prefix='./Install'
+prefix='NO'
+prefix=ARGUMENTS.get('prefix',prefix)
 if os.environ.has_key('DMPSWSYS'):
     prefix=os.environ['DMPSWSYS']
-else:
+if 'NO'==prefix:
+    prefix='./Install'
     UsrPrefix=raw_input('Where to install DMPSW (press Enter to use default "%s"):'%prefix)
-    #UsrPrefix=UsrPrefix.strip()
     if UsrPrefix:   prefix=UsrPrefix
 prefix=os.path.abspath(prefix)
 print "\n==>Installing DMPSW Framework into:\t%s\n" %prefix
