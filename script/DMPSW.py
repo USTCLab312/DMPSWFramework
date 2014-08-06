@@ -25,11 +25,6 @@ SvcMgr = Core.ServiceManager()
 AlgMgr = Core.AlgorithmManager()
 
 #-------------------------------------------------------------------
-# get pathes
-SysPath = os.getenv('DMPSWSYS')
-WorkPath = os.getenv('DMPSWWORK')
-
-#-------------------------------------------------------------------
 # get default service
 RootIOSvc = SvcMgr.Get("DmpRootIOSvc")
 
