@@ -69,7 +69,7 @@ bool DmpCore::Run(){
       fTerminateRun = true;
       break;
     }else if(fCurrentEventID%5000 == 0){
-      std::cout<<"\t [DmpCore::Run] event ID = "<<fCurrentEventID<<std::endl;
+      std::cout<<"\t [DmpCore::Run] event ID = "<<std::dec<<fCurrentEventID<<std::endl;
     }
     if(gRootIOSvc->PrepareEvent(fCurrentEventID)){
       if(fAlgMgr->ProcessOneEvent()){
