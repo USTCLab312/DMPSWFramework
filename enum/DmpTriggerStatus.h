@@ -9,10 +9,10 @@
 
 namespace DmpTriggerStatus{
   enum Type{
-    k0Compress = 0,
-    kCompress = 1,
-    kCalDAC = 2,
-    kUnknow = 3
+    kNoCheck = 0,       // did not receive check signal
+    kCheckRight = 1,    // received check signal, and it's right
+    kCheckWrong = 2,    // received check signal, but it's wrong
+    kUnknow = 3         // undefined
   };
 }
 
