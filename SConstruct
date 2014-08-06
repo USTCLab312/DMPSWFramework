@@ -35,6 +35,9 @@ Default(Command(prefix+'/lib/DMPSW.py','./script/DMPSW.py',Copy("$TARGET","$SOUR
 for tmp in os.listdir(includeDir):
     if ".h" in tmp:
         Default(Command(prefix+'/include/'+tmp,includeDir+'/'+tmp,Copy("$TARGET","$SOURCE")))
+for tmp in os.listdir('./enum'):
+    if ".h" in tmp:
+        Default(Command(prefix+'/include/'+tmp,'./enum/'+tmp,Copy("$TARGET","$SOURCE")))
 for tmp in os.listdir('./script'):
     if "dmp" in tmp:
         Default(Command(prefix+'/bin/'+tmp,'./script/'+tmp,Copy("$TARGET","$SOURCE")))
